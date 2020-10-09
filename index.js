@@ -179,11 +179,16 @@ Use the getLongReviews function below to do the following:
 */
 
 function getLongReviews(arr) {
+  const newarr = [];
     for(let i = 0; i< arr.length; i++){
-  
-    }
+  let res = arr[i].feedback.split(" ");
+  if(res.length > 15){
+     newarr.push(arr[i]);
   }
-  
+    }
+    return newarr;
+  }
+  console.log(getLongReviews(reviews));
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.
@@ -203,9 +208,17 @@ Use the carMaker function below to do the following:
 */
 
 
-// function carMaker(odometer) {
- 
-// }
+function carMaker(odometer) {
+ const car = {
+   driven: odometer,
+   drive: function (distance){
+     return this.driven = this.driven + distance;
+   }
+ }
+ car.drive(100);
+ return car;
+}
+console.log(carMaker(20))
 // console.log(carMaker(10))
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo(){
